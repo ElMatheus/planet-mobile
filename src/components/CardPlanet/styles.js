@@ -8,18 +8,27 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     gap: 10,
   },
+  texture: {
+    position: 'absolute',
+    width: 80,
+    height: 80,
+    borderRadius: 50,
+    zIndex: 1,
+    opacity: 0.4,
+  },
   iconPlanet: {
     width: 80,
     height: 80,
     borderRadius: 50,
+
   },
   containerCard: {
     backgroundColor: '#1f1a37',
     borderRadius: 25,
-    paddingTop: 10,
-    paddingRight: 10,
-    paddingLeft: 10,
-    paddingBottom: 20,
+    paddingTop: 15,
+    paddingRight: 15,
+    paddingLeft: 15,
+    paddingBottom: 25,
     flexDirection: 'row',
     flex: 1,
     shadowColor: "#000",
@@ -30,7 +39,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     elevation: 8,
-
 
   },
 

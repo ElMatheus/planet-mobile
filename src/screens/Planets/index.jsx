@@ -1,7 +1,9 @@
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import planets from '../../data/Words';
 import Title from '../../components/Title';
 import CardPlanet from '../../components/CardPlanet';
+
 
 import styles from './styles';
 
@@ -23,9 +25,20 @@ export default function Planets() {
           os catálogos de planetas descobertos.
         </Text>
       </View>
-      <View style={styles.planetsCatalog}>
-        <CardPlanet txt={'Marte'} desc={'Planeta vermelho'} date={'10/02/2003'} color1={'#ff0000'} color2={'#ff4d4d'} />
-      </View>
+      <ScrollView style={styles.planetsCatalog}>
+        {
+          planets.map((planet) => (
+            <CardPlanet
+              key={planet.id}
+              name={planet.name}
+              desc={planet.desc}
+              population={planet.population}
+              color1={planet.color1}
+              color2={planet.color2}
+            />
+          ))
+        }
+      </ScrollView>
     </LinearGradient>
 
   )
