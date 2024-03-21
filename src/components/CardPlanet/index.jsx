@@ -9,7 +9,7 @@ const CardPlanet = ({ name, desc, population, color1, color2 }) => {
 
         <Image
           style={styles.texture}
-          source={require('../../../assets/texture.jpg')}
+          source={require('../../../assets/texture.png')}
         />
 
         <LinearGradient

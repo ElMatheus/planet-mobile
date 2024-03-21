@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 50,
     zIndex: 1,
-    opacity: 0.4,
   },
   iconPlanet: {
     width: 80,
