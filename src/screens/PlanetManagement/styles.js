@@ -33,22 +33,43 @@ const styles = StyleSheet.create({
     },
     containerInserts: {
         flex: 1,
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        gap: 30,
         marginTop: '15%',
         backgroundColor: '#f6ede4',
         borderTopLeftRadius: 70,
         padding: 20,
+
+    },
+    containerInfoWorld: {
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        gap: 30,
     },
     cardInput: {
         backgroundColor: '#fdf6ee',
         padding: 20,
         borderRadius: 30,
         elevation: 10,
+        width: '40%',
     },
-    input: {
+    cardInputColor: {
+        backgroundColor: '#fdf6ee',
+        padding: 20,
+        borderRadius: 30,
+        elevation: 10,
+        gap: 10,
+        alignItems: 'center',
+    },
+    txtInp: {
+        color: '#9d9893',
+    },
+    titleInserts: {
+        marginTop: 20,
+        marginLeft: 20,
+        marginBottom: 20,
+        color: '#a39892',
+        fontWeight: 'bold',
+        fontSize: 16,
     },
 });
 
