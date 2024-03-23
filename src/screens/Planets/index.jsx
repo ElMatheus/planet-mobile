@@ -1,7 +1,6 @@
 import { View, Text, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import planets from '../../data/Words';
-import Title from '../../components/Title';
 import CardPlanet from '../../components/CardPlanet';
 
 
@@ -33,8 +32,8 @@ export default function Planets() {
               name={planet.name}
               desc={planet.desc}
               population={planet.population}
-              color1={planet.color1}
-              color2={planet.color2}
+              color1={planet.cores.color1}
+              color2={planet.cores.color2}
             />
           ))
         }

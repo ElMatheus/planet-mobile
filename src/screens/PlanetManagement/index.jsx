@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TriangleColorPicker, toHsv } from 'react-native-color-picker';
 import styles from './styles';
 
@@ -33,6 +33,7 @@ export default function Management() {
                     <Text style={styles.titleInserts}>Informações sobre o Mundo</Text>
                     <View style={styles.containerInfoWorld}>
                         <TextInput style={styles.cardInput} placeholder="Nome do Mundo" />
+                        <TextInput style={styles.cardInput} placeholder="Descrição do Mundo" />
                         <TextInput
                             style={styles.cardInput}
                             keyboardType='numeric'
