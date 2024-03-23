@@ -19,16 +19,16 @@ export default class PlanetsRepository {
     this.planets = this.planets.filter(planet => planet.id !== id);
   }
 
-  updatePlanet(planet) {
-    const planet = this.getPlanetById(planet.id);
+  // updatePlanet(planet) {
+  //   const planet = this.getPlanetById(planet.id);
 
-    if (planet) {
-      planet.name = planet.name;
-      planet.description = planet.description;
-      planet.image = planet.image;
-    }
+  //   if (planet) {
+  //     planet.name = planet.name;
+  //     planet.description = planet.description;
+  //     planet.image = planet.image;
+  //   }
 
-    return planet;
-  }
+  //   return planet;
+  // }
 
 }
