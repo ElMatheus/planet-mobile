@@ -71,6 +71,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
     },
+    inpColor: {
+        width: '70%',
+        height: 200,
+    }
 });
 
 export default styles;

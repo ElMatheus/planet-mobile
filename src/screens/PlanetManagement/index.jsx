@@ -67,7 +67,7 @@ export default function Management() {
                                 onColorChange={onColorChange}
                                 onColorSelected={(color) => alert(`Color selected: ${color}`)}
                                 onOldColorSelected={(color) => alert(`Old color selected: ${color}`)}
-                                style={{  width: "70%" }}
+                                style={styles.inpColor}
                             />
                         </View>
                         <View style={styles.cardInputColor}>
@@ -80,7 +80,7 @@ export default function Management() {
                                 onColorChange={onColorChange}
                                 onColorSelected={(color) => alert(`Color selected: ${color}`)}
                                 onOldColorSelected={(color) => alert(`Old color selected: ${color}`)}
-                                style={{  width: "70%" }}
+                                style={styles.inpColor}
                             />
                         </View>
                     </View>
