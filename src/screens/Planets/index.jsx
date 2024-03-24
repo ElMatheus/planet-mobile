@@ -1,12 +1,13 @@
 import { View, Text, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import planets from '../../data/Words';
 import CardPlanet from '../../components/CardPlanet';
 
+import repository from '../../models/planet/PlanetsRepository';
 
 import styles from './styles';
 
 export default function Planets() {
+
   return (
     <LinearGradient
       colors={['#1a1733', '#201841']}
@@ -26,7 +27,7 @@ export default function Planets() {
       </View>
       <ScrollView style={styles.planetsCatalog}>
         {
-          planets.map((planet) => (
+          repository.planets.map((planet) => (
             <CardPlanet
               key={planet.id}
               name={planet.name}

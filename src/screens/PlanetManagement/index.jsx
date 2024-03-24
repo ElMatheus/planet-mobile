@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { TriangleColorPicker, toHsv } from 'react-native-color-picker';
 
 import Planet from '../../models/planet/Planet';
-import PlanetsRepository from '../../models/planet/PlanetsRepository';
+import repository from '../../models/planet/PlanetsRepository';
+
 
 import styles from './styles';
 
@@ -25,11 +26,13 @@ export default function Management() {
     const [color1, setColor1] = useState('#000000');
     const [color2, setColor2] = useState('#000000');
 
-    const repository = new PlanetsRepository();
+
+    
+
     
     const handleAddPlanet = () => {
-        const planet = new Planet(name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
-        repository.addPlanet(planet);
+        const newPlanet = new Planet(name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
+        repository.addPlanet(newPlanet);
         setName('');
         setDescription('');
         setDate('');
@@ -41,7 +44,6 @@ export default function Management() {
         setRulerTitle('');
         setColor1('#000000');
         setColor2('#000000');
-        
     }
 
 
@@ -123,7 +125,6 @@ export default function Management() {
                             /> 
                         </View>
                     </View>
-
                 </View>
             </ScrollView>
 

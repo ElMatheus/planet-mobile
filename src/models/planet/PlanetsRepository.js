@@ -1,4 +1,9 @@
-export default class PlanetsRepository {
+import Planet from './Planet';
+import { planets } from '../../data/Words';
+
+
+class PlanetsRepository {
+
   constructor() {
     this.planets = [];
   }
@@ -31,4 +36,17 @@ export default class PlanetsRepository {
   //   return planet;
   // }
 
+
 }
+
+
+
+const repository = new PlanetsRepository();
+
+planets.map((element) => {
+  const planet = new Planet(element.name, element.desc, element.dataConquista, element.population, element.localizacao.galaxia, element.localizacao.sistemaSolar, element.localizacao.coordenadas, element.governante.nome, element.governante.titulo, element.cores.color1, element.cores.color2);
+  repository.addPlanet(planet);
+});
+
+
+export default repository;
