@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     containerInfo: {
         marginTop: 50,
         marginLeft: 25,
-        maxWidth: 300,
     },
     texture: {
         position: 'absolute',
