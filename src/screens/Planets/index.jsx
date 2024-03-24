@@ -1,5 +1,7 @@
 import { View, Text, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useState, useEffect } from 'react';
+import { useIsFocused } from "@react-navigation/native";
 import CardPlanet from '../../components/CardPlanet';
 
 import repository from '../../models/planet/PlanetsRepository';
@@ -7,6 +9,15 @@ import repository from '../../models/planet/PlanetsRepository';
 import styles from './styles';
 
 export default function Planets() {
+  const isFocused = useIsFocused();
+  const [allPlanets, setAllPlanets] = useState([]);
+
+  useEffect(() => {
+    if (isFocused) {
+      const planets = repository.getAll();
+      setAllPlanets(planets);
+    }
+  }, [isFocused]);
 
   return (
     <LinearGradient
@@ -27,7 +38,7 @@ export default function Planets() {
       </View>
       <ScrollView style={styles.planetsCatalog}>
         {
-          repository.planets.map((planet) => (
+          allPlanets.map((planet) => (
             <CardPlanet
               key={planet.id}
               name={planet.name}

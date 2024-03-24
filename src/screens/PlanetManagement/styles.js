@@ -74,7 +74,12 @@ const styles = StyleSheet.create({
     inpColor: {
         width: '70%',
         height: 200,
-    }
+    },
+    error: {
+        color: 'red',
+        fontSize: 12,
+        textAlign: 'center',
+    },
 });
 
 export default styles;
