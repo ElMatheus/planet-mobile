@@ -1,7 +1,9 @@
 import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TriangleColorPicker, toHsv } from 'react-native-color-picker';
+import { useIsFocused } from "@react-navigation/native";
+import tinycolor from 'tinycolor2';
 
 import Planet from '../../models/planet/Planet';
 import repository from '../../models/planet/PlanetsRepository';
@@ -23,10 +25,24 @@ export default function Management() {
     const [rulerName, setRulerName] = useState('');
     const [rulerTitle, setRulerTitle] = useState('');
     // cores inputs
-    const [color1, setColor1] = useState('#000000');
-    const [color2, setColor2] = useState('#000000');
+    const [color1, setColor1] = useState('');
+    const [color2, setColor2] = useState('');
+
+    const [styleColor1, setStyleColor1] = useState('');
 
     const [verificationsInp, setVerificationsInp] = useState([]);
+    const isFocused = useIsFocused();
+
+
+    // resolver bug do color picker
+    useEffect(() => {
+        if (isFocused) {
+            setStyleColor1('')
+            setTimeout(() => {
+                setStyleColor1('inpColor')
+            }, 1);
+        }
+      }, [isFocused]);
 
 
 
@@ -36,6 +52,7 @@ export default function Management() {
             setVerificationsInp(verifications);
         } else {
             const newPlanet = new Planet(name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
+            console.log(newPlanet);
             repository.addPlanet(newPlanet);
             clearFields();
         }
@@ -116,17 +133,18 @@ export default function Management() {
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0 }}
             style={{ flex: 1 }}
-        >
-            <View style={styles.pageDetails}>
-                <View style={styles.containerInfo}>
-                    <Text style={styles.title}>Gerenciamento de Mundos</Text>
-                    <Text style={styles.txt}>Bem-vindo ao centro de controle intergaláctico! Aqui, você tem o poder de moldar o universo ao seu gosto.</Text>
-                    <TouchableOpacity style={styles.button}>
-                        <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Adicionar Mundo</Text>
-                    </TouchableOpacity>
+            >
+            <ScrollView>
+
+                <View style={styles.pageDetails}>
+                    <View style={styles.containerInfo}>
+                        <Text style={styles.title}>Gerenciamento de Mundos</Text>
+                        <Text style={styles.txt}>Bem-vindo ao centro de controle intergaláctico! Aqui, você tem o poder de moldar o universo ao seu gosto.</Text>
+                        <TouchableOpacity style={styles.button}>
+                            <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Adicionar Mundo</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
-            <ScrollView >
                 <View style={styles.containerInserts}>
 
                     <Text style={styles.titleInserts}>Informações sobre o Mundo</Text>
@@ -215,10 +233,10 @@ export default function Management() {
                             <TriangleColorPicker
                                 oldColor="purple"
                                 color={color1}
-                                onColorChange={setColor1}
-                                onColorSelected={(color) => alert(`Color selected: ${color}`)}
-                                onOldColorSelected={(color) => alert(`Old color selected: ${color}`)}
-                                style={styles.inpColor}
+                                onColorChange={(color) => setColor1(tinycolor(color).toHexString())}
+                                onColorSelected={(color) => alert(`Color selected: ${color1}`)}
+                                onOldColorSelected={(color) => alert(`Old color selected: ${color1}`)}
+                                style={styles[styleColor1]}
                             />
                         </View>
                         <View style={styles.cardInputColor}>
@@ -228,16 +246,16 @@ export default function Management() {
                             <TriangleColorPicker
                                 oldColor="purple"
                                 color={color2}
-                                onColorChange={setColor2}
+                                onColorChange={(color) => setColor2(tinycolor(color).toHexString())}
                                 onColorSelected={(color) => alert(`Color selected: ${color}`)}
                                 onOldColorSelected={(color) => alert(`Old color selected: ${color}`)}
-                                style={styles.inpColor}
+                                style={styles[styleColor1]}
                             />
                         </View>
                     </View>
                 </View>
-            </ScrollView>
 
+            </ScrollView>
 
         </LinearGradient>
     )

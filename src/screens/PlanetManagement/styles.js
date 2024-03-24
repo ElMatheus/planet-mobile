@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#f6ede4',
         borderTopLeftRadius: 70,
         padding: 20,
-
     },
     containerInfoWorld: {
         flexWrap: 'wrap',
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     inpColor: {
-        width: '70%',
+        width: '80%',
         height: 200,
     },
     error: {
@@ -80,6 +79,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         textAlign: 'center',
     },
+
 });
 
 export default styles;
