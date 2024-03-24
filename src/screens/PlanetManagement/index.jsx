@@ -52,9 +52,9 @@ export default function Management() {
             setVerificationsInp(verifications);
         } else {
             const newPlanet = new Planet(name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
-            console.log(newPlanet);
             repository.addPlanet(newPlanet);
             clearFields();
+            setVerificationsInp([]);
         }
     }
 
@@ -124,6 +124,8 @@ export default function Management() {
         setCoordinates('');
         setRulerName('');
         setRulerTitle('');
+        setColor1('#000');
+        setColor2('#000');
     }
 
 
