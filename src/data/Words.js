@@ -6,13 +6,13 @@ export const planets = [
     dataConquista: '2021',
     population: '3.100',
     localizacao: {
-      galaxia: 'Via Láctea',
-      sistemaSolar: 'Sistema Solar',
-      coordenadas: '123, 456',
+      galaxy: 'Via Láctea',
+      solarSystem: 'Sistema Solar',
+      coordinates: '123, 456',
     },
     governante: {
-      nome: 'Elon Musk',
-      titulo: 'CEO da SpaceX',
+      name: 'Elon Musk',
+      title: 'CEO da SpaceX',
     },
     cores: {
       color1: '#ff0000',
@@ -26,13 +26,13 @@ export const planets = [
     dataConquista: '2022',
     population: '1.000',
     localizacao: {
-      galaxia: 'Via Láctea',
-      sistemaSolar: 'Sistema Solar',
-      coordenadas: '456, 789',
+      galaxy: 'Via Láctea',
+      solarSystem: 'Sistema Solar',
+      coordinates: '456, 789',
     },
     governante: {
-      nome: 'Luke Skywalker',
-      titulo: 'Jedi Master',
+      name:  'Luke Skywalker',
+      title: 'Jedi Master',
     },
     cores: {
       color1: '#ffcc00',
@@ -46,13 +46,13 @@ export const planets = [
     dataConquista: '2023',
     population: '2.500',
     localizacao: {
-      galaxia: 'Via Láctea',
-      sistemaSolar: 'Sistema Solar',
-      coordenadas: '789, 123',
+      galaxy: 'Via Láctea',
+      solarSystem: 'Sistema Solar',
+      coordinates: '789, 123',
     },
     governante: {
-      nome: 'Leia Organa',
-      titulo: 'General da Resistência',
+      name:  'Leia Organa',
+      title: 'General da Resistência',
     },
     cores: {
       color1: '#00cc00',
@@ -66,13 +66,13 @@ export const planets = [
     dataConquista: '2024',
     population: '1.200',
     localizacao: {
-      galaxia: 'Via Láctea',
-      sistemaSolar: 'Sistema Solar',
-      coordenadas: '321, 654',
+      galaxy: 'Via Láctea',
+      solarSystem: 'Sistema Solar',
+      coordinates: '321, 654',
     },
     governante: {
-      nome: 'Han Solo',
-      titulo: 'Contrabandista',
+      name:  'Han Solo',
+      title: 'Contrabandista',
     },
     cores: {
       color1: '#00ccff',
@@ -86,13 +86,13 @@ export const planets = [
     dataConquista: '2025',
     population: '5.000',
     localizacao: {
-      galaxia: 'Via Láctea',
-      sistemaSolar: 'Sistema Solar',
-      coordenadas: '654, 321',
+      galaxy: 'Via Láctea',
+      solarSystem: 'Sistema Solar',
+      coordinates: '654, 321',
     },
     governante: {
-      nome: 'Palpatine',
-      titulo: 'Imperador',
+      name:  'Palpatine',
+      title: 'Imperador',
     },
     cores: {
       color1: '#0000ff',

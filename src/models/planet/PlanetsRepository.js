@@ -44,7 +44,7 @@ class PlanetsRepository {
 const repository = new PlanetsRepository();
 
 planets.map((element) => {
-  const planet = new Planet(element.name, element.desc, element.dataConquista, element.population, element.localizacao.galaxia, element.localizacao.sistemaSolar, element.localizacao.coordenadas, element.governante.nome, element.governante.titulo, element.cores.color1, element.cores.color2);
+  const planet = new Planet(element.name, element.desc, element.dataConquista, element.population, element.localizacao.galaxy, element.localizacao.solarSystem, element.localizacao.coordinates, element.governante.name, element.governante.title, element.cores.color1, element.cores.color2);
   repository.addPlanet(planet);
 });
 

@@ -41,6 +41,7 @@ export default function Planets() {
           allPlanets.map((planet) => (
             <CardPlanet
               planet={planet}
+              key={planet.id}
             />
           ))
         }
