@@ -20,20 +20,28 @@ export default function Planet({ route }) {
           <Text style={styles.title}>{planet.name}</Text>
           <Text style={styles.text}>{planet.desc}</Text>
         </View>
-        <View style={styles.containerPlanet}>
+        <View style={styles.containerManagement}>
 
-          <Image
-            style={styles.texture}
-            source={require('../../../assets/texture.png')}
-          />
+          <View style={styles.containerPlanet}>
 
-          <LinearGradient
-            style={styles.iconPlanet}
-            colors={[planet.cores.color1, planet.cores.color2]}
-            start={[0, 1]}
-            end={[0, 0]}
-          />
+            <Image
+              style={styles.texture}
+              source={require('../../../assets/texture.png')}
+            />
+
+            <LinearGradient
+              style={styles.iconPlanet}
+              colors={[planet.cores.color1, planet.cores.color2]}
+              start={[0, 1]}
+              end={[0, 0]}
+            />
+          </View>
+          <View style={styles.management}>
+            <FontAwesome5 style={styles.iconEdit} size={25} color={"#d8d5db"} name='pen' />
+            <FontAwesome5 style={styles.iconDelete} size={25} color={"#d8d5db"} name='trash' />
+          </View>
         </View>
+
         <View style={styles.containerInfoPlanet}>
           <View style={styles.cardInformation}>
             <Ionicons style={styles.icon} size={20} color={"#d8d5db"} name='people-sharp' />
@@ -52,7 +60,6 @@ export default function Planet({ route }) {
             <Text style={styles.txtIcon2}>{planet.governante.title}</Text>
           </View>
         </View>
-
         <LinearGradient
           style={styles.containerLocation}
           colors={['#1c1438', '#1e1a29']}
@@ -70,8 +77,8 @@ export default function Planet({ route }) {
           <FontAwesome5 style={styles.icon4} size={27} color={"#d8d5db"} name='map-marker-alt' />
         </LinearGradient>
 
-      </ScrollView>
+      </ScrollView >
 
-    </LinearGradient>
+    </LinearGradient >
   )
 }

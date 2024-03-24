@@ -28,8 +28,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
     containerPlanet: {
-        marginTop: "5%",
-        marginLeft: 50,
+        
     },
     containerInfoPlanet: {
         marginTop: "10%",
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         paddingBottom: 10,
         width: '100%',
-        marginTop: "auto",
+        marginTop: "7%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -96,7 +95,29 @@ const styles = StyleSheet.create({
     },
     location: {
         gap: 3,
-    }
+    },
+    containerManagement: {
+        margin: "5%",
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    management: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 50,
+        marginRight: 20,
+    },
+    iconEdit: {
+        backgroundColor: '#4cc0c0',
+        padding: 14,
+        borderRadius: 100,
+    },
+    iconDelete: {
+        backgroundColor: '#e9504c',
+        padding: 14,
+        borderRadius: 100,
+    },
 });
 
 export default styles;
