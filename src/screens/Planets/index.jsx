@@ -40,12 +40,7 @@ export default function Planets() {
         {
           allPlanets.map((planet) => (
             <CardPlanet
-              key={planet.id}
-              name={planet.name}
-              desc={planet.desc}
-              population={planet.population}
-              color1={planet.cores.color1}
-              color2={planet.cores.color2}
+              planet={planet}
             />
           ))
         }
