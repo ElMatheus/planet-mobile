@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 
 
 const styles = StyleSheet.create({
+    containerBack: {
+        flex: 1,
+        justifyContent: 'space-between',
+    },
     title: {
         fontSize: 42,
         color: '#a79fae',
@@ -28,7 +32,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
     containerPlanet: {
-        
+
     },
     containerInfoPlanet: {
         marginTop: "10%",
@@ -73,7 +77,6 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         paddingBottom: 10,
         width: '100%',
-        marginTop: "7%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',

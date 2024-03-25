@@ -24,34 +24,33 @@ const TabRoutes = () => {
         {
           tabBarLabel: 'Início'
         }
-      
+
       } />
       <Tab.Screen name="Management" initialParams={{ planet: null, edit: false }} component={Management} options={
         {
           tabBarIcon: ({ focused }) => (<Feather name="plus-square" size={24} color={focused ? "#4cc0c0" : "#605565"} />),
           tabBarLabel: 'Gerenciador de Planetas',
           tabBarActiveTintColor: '#4cc0c0',
-        tabBarInactiveTintColor: '#605565',
+          tabBarInactiveTintColor: '#605565',
         }
-      
+
       } />
       <Tab.Screen name="Planets" component={Planets} options={
         {
           tabBarIcon: ({ focused }) => (<Feather name="globe" size={24} color={focused ? "#4cc0c0" : "#605565"} />),
           tabBarLabel: 'Planetas',
           tabBarActiveTintColor: '#4cc0c0',
-        tabBarInactiveTintColor: '#605565',
+          tabBarInactiveTintColor: '#605565',
         }
-      
+
       } />
 
       <Tab.Screen name="Planet" component={Planet} options={
         {
-        tabBarItemStyle: {
-          display: 'none',
-        },
+          tabBarItemStyle: {
+            display: 'none',
+          },
         }
-      
       } />
     </Tab.Navigator>
   );
