@@ -1,12 +1,20 @@
-import { View, Text, Image, ScrollView } from 'react-native'
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import repository from '../../models/planet/PlanetsRepository';
+import { useNavigation } from "@react-navigation/native";
 
 import styles from './styles';
 
 export default function Planet({ route }) {
+  const navigation = useNavigation();
   const { planet } = route.params
+
+  const handleDelete = () => {
+    repository.remove(planet.id);
+    navigation.navigate("Planets");
+  }
   return (
     <LinearGradient
       colors={['#1a1733', '#201841']}
@@ -38,7 +46,9 @@ export default function Planet({ route }) {
           </View>
           <View style={styles.management}>
             <FontAwesome5 style={styles.iconEdit} size={25} color={"#d8d5db"} name='pen' />
-            <FontAwesome5 style={styles.iconDelete} size={25} color={"#d8d5db"} name='trash' />
+            <TouchableOpacity onPress={handleDelete}>
+              <FontAwesome5 style={styles.iconDelete} size={25} color={"#d8d5db"} name='trash' />
+            </TouchableOpacity>
           </View>
         </View>
 
