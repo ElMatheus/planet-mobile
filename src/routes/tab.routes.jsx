@@ -26,7 +26,7 @@ const TabRoutes = () => {
         }
       
       } />
-      <Tab.Screen name="Management" component={Management} options={
+      <Tab.Screen name="Management" initialParams={{ planet: null, edit: false }} component={Management} options={
         {
           tabBarIcon: ({ focused }) => (<Feather name="plus-square" size={24} color={focused ? "#4cc0c0" : "#605565"} />),
           tabBarLabel: 'Gerenciador de Planetas',

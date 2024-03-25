@@ -15,6 +15,10 @@ export default function Planet({ route }) {
     repository.remove(planet.id);
     navigation.navigate("Planets");
   }
+
+  const handleEdit = () => {
+    navigation.navigate("Management", { planet: planet, edit: true });
+  }
   return (
     <LinearGradient
       colors={['#1a1733', '#201841']}
@@ -45,7 +49,9 @@ export default function Planet({ route }) {
             />
           </View>
           <View style={styles.management}>
-            <FontAwesome5 style={styles.iconEdit} size={25} color={"#d8d5db"} name='pen' />
+            <TouchableOpacity onPress={handleEdit}>
+              <FontAwesome5 style={styles.iconEdit} size={25} color={"#d8d5db"} name='pen' />
+            </TouchableOpacity>
             <TouchableOpacity onPress={handleDelete}>
               <FontAwesome5 style={styles.iconDelete} size={25} color={"#d8d5db"} name='trash' />
             </TouchableOpacity>

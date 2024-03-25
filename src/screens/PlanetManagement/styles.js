@@ -26,6 +26,14 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginRight: '40%',
     },
+    buttonRed: {
+        backgroundColor: '#e9504c',
+        padding: 12,
+        borderRadius: 30,
+        alignItems: 'center',
+        marginTop: 20,
+        marginRight: '40%',
+    },
     buttonTxt: {
         color: '#e5fdfd',
         fontWeight: 'bold',

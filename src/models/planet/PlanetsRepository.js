@@ -13,7 +13,7 @@ class PlanetsRepository {
   }
 
   getPlanetById(id) {
-    return this.planets.find(planet => planet.id == id);
+    return this.planets.find((planet) => planet.id == id);
   }
 
   addPlanet(planet) {
@@ -24,17 +24,24 @@ class PlanetsRepository {
     this.planets = this.planets.filter(planet => planet.id !== id);
   }
 
-  // updatePlanet(planet) {
-  //   const planet = this.getPlanetById(planet.id);
-
-  //   if (planet) {
-  //     planet.name = planet.name;
-  //     planet.description = planet.description;
-  //     planet.image = planet.image;
-  //   }
-
-  //   return planet;
-  // }
+  updatePlanet(id , name, description, data, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2) {
+    const planetId = this.getPlanetById(id);
+    if (planetId) {
+      planetId.name = name;
+      planetId.desc = description;
+      planetId.dataConquista = data;
+      planetId.population = population;
+      planetId.localizacao.galaxy = galaxy;
+      planetId.localizacao.solarSystem = solarSystem;
+      planetId.localizacao.coordinates = coordinates;
+      planetId.governante.name = rulerName;
+      planetId.governante.title = rulerTitle;
+      planetId.cores.color1 = color1;
+      planetId.cores.color2 = color2;
+    }
+    console.log(planetId);
+    return planetId;
+  }
 
 
 }

@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-nativ
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState, useEffect } from 'react';
 import { TriangleColorPicker, toHsv } from 'react-native-color-picker';
-import { useIsFocused } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import tinycolor from 'tinycolor2';
 
 import Planet from '../../models/planet/Planet';
@@ -11,7 +11,8 @@ import repository from '../../models/planet/PlanetsRepository';
 
 import styles from './styles';
 
-export default function Management() {
+export default function Management({ route }) {
+    let { planet, edit } = route.params;
     // info inputs
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -30,8 +31,31 @@ export default function Management() {
 
     const [styleColor1, setStyleColor1] = useState('');
 
+    const [isUpdate, setIsUpdate] = useState(false);
+
     const [verificationsInp, setVerificationsInp] = useState([]);
     const isFocused = useIsFocused();
+    const navigation = useNavigation();
+
+    useEffect(() => {
+        if (edit) {
+            console.log("blz");
+            setName(planet.name);
+            setDescription(planet.desc);
+            setDate(planet.dataConquista);
+            setPopulation(planet.population);
+            setGalaxy(planet.localizacao.galaxy);
+            setSolarSystem(planet.localizacao.solarSystem);
+            setCoordinates(planet.localizacao.coordinates);
+            setRulerName(planet.governante.name);
+            setRulerTitle(planet.governante.title);
+            setColor1(planet.cores.color1);
+            setColor2(planet.cores.color2);
+            setIsUpdate(true);
+        } else {
+            clearFields();
+        }
+    }, [planet, edit]);
 
 
     // resolver bug do color picker
@@ -42,7 +66,7 @@ export default function Management() {
                 setStyleColor1('inpColor')
             }, 1);
         }
-      }, [isFocused]);
+    }, [isFocused]);
 
 
 
@@ -51,10 +75,17 @@ export default function Management() {
         if (verifications().length > 0) {
             setVerificationsInp(verifications);
         } else {
-            const newPlanet = new Planet(name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
-            repository.addPlanet(newPlanet);
-            clearFields();
-            setVerificationsInp([]);
+            if (isUpdate) {
+                repository.updatePlanet(planet.id, name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
+                clearFields();
+                setVerificationsInp([]);
+            } else {
+                const newPlanet = new Planet(name, description, date, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2);
+                repository.addPlanet(newPlanet);
+                clearFields();
+                setVerificationsInp([]);
+            }
+            navigation.navigate("Planets");
         }
     }
 
@@ -115,6 +146,8 @@ export default function Management() {
     }
 
     const clearFields = () => {
+        setIsUpdate(false);
+        edit = false;
         setName('');
         setDescription('');
         setDate('');
@@ -135,7 +168,7 @@ export default function Management() {
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0 }}
             style={{ flex: 1 }}
-            >
+        >
             <ScrollView>
 
                 <View style={styles.pageDetails}>
@@ -143,8 +176,15 @@ export default function Management() {
                         <Text style={styles.title}>Gerenciamento de Mundos</Text>
                         <Text style={styles.txt}>Bem-vindo ao centro de controle intergaláctico! Aqui, você tem o poder de moldar o universo ao seu gosto.</Text>
                         <TouchableOpacity style={styles.button}>
-                            <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Adicionar Mundo</Text>
+                            {
+                                isUpdate ? <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Editar Mundo</Text> : <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Adicionar Mundo</Text>
+                            }
                         </TouchableOpacity>
+                            {isUpdate && (
+                                <TouchableOpacity style={styles.buttonRed} onPress={clearFields}>
+                                    <Text style={styles.buttonTxt}>Cancelar Edição</Text>
+                                </TouchableOpacity>
+                            )}
                     </View>
                 </View>
                 <View style={styles.containerInserts}>
