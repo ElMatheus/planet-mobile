@@ -16,6 +16,10 @@ class PlanetsRepository {
     return this.planets.find((planet) => planet.id == id);
   }
 
+  getLengthPlanets() {
+    return this.planets.length;
+  }
+
   addPlanet(planet) {
     this.planets.push(planet);
   }
@@ -24,7 +28,7 @@ class PlanetsRepository {
     this.planets = this.planets.filter(planet => planet.id !== id);
   }
 
-  updatePlanet(id , name, description, data, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2) {
+  updatePlanet(id, name, description, data, population, galaxy, solarSystem, coordinates, rulerName, rulerTitle, color1, color2) {
     const planetId = this.getPlanetById(id);
     if (planetId) {
       planetId.name = name;
@@ -39,7 +43,6 @@ class PlanetsRepository {
       planetId.cores.color1 = color1;
       planetId.cores.color2 = color2;
     }
-    console.log(planetId);
     return planetId;
   }
 

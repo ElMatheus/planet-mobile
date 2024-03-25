@@ -1,26 +1,29 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-
-import Title from '../../components/Title';
-
+import { View, Text, TouchableOpacity, ImageBackground, Image } from 'react-native';
+import repository from '../../models/planet/PlanetsRepository';
+import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import styles from './styles';
 
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <View>
-        <Text>Planet</Text>
-        <Text>Mobile</Text>
-      </View>
-      <View>
-        <Text>(descricao do projeto)</Text>
-      </View>
-      <View>
-        {/* IMAGEM MUNDOS */}
-        <Text>150 mundos descobertos</Text>
-      </View>
-      <View>
+    <ImageBackground style={styles.backgroundImage} source={require('../../../assets/backgroundPlanet.jpg')} >
 
+      <View style={styles.containerTitle}>
+        <Text style={styles.title}>Planet</Text>
+        <Text style={styles.title2}>Mobile</Text>
       </View>
-    </View>
+
+      <View style={styles.containerDesc}>
+        <Text style={styles.desc}>
+          Bem Vindo ao Planet Mobile, um aplicativo para você descobrir novos mundos e aprender mais sobre o universo.
+        </Text>
+      </View>
+
+      <View style={styles.discoveryWorld}>
+        <Ionicons name="planet" size={56} color="#a79fae" />
+        <Text style={styles.titlePlanets} >{repository.getLengthPlanets()} mundos descobertos</Text>
+      </View>
+
+    </ImageBackground>
   )
 }
