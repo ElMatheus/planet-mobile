@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    scroll: {
+        position: 'relative',
+
+    },
     containerInfo: {
         maxWidth: '60%',
         marginLeft: 20,
@@ -87,7 +91,25 @@ const styles = StyleSheet.create({
         fontSize: 12,
         textAlign: 'center',
     },
-
+    world: {
+        position: 'absolute',
+        right: 10,
+        top: -60,
+        
+    },
+    texture: {
+        position: 'absolute',
+        width: 120,
+        height: 120,
+        borderRadius: 100,
+        zIndex: 1,
+      },
+      iconPlanet: {
+        width: 120,
+        height: 120,
+        borderRadius: 100,
+    
+      },
 });
 
 export default styles;

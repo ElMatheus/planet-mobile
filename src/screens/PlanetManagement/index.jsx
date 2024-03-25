@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, ScrollView, Image } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState, useEffect } from 'react';
 import { TriangleColorPicker, toHsv } from 'react-native-color-picker';
@@ -169,7 +169,7 @@ export default function Management({ route }) {
             end={{ x: 1, y: 0 }}
             style={{ flex: 1 }}
         >
-            <ScrollView>
+            <ScrollView style={styles.scroll}>
 
                 <View style={styles.pageDetails}>
                     <View style={styles.containerInfo}>
@@ -180,14 +180,26 @@ export default function Management({ route }) {
                                 isUpdate ? <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Editar Mundo</Text> : <Text onPress={handleAddPlanet} style={styles.buttonTxt}>Adicionar Mundo</Text>
                             }
                         </TouchableOpacity>
-                            {isUpdate && (
-                                <TouchableOpacity style={styles.buttonRed} onPress={clearFields}>
-                                    <Text style={styles.buttonTxt}>Cancelar Edição</Text>
-                                </TouchableOpacity>
-                            )}
+                        {isUpdate && (
+                            <TouchableOpacity style={styles.buttonRed} onPress={clearFields}>
+                                <Text style={styles.buttonTxt}>Cancelar Edição</Text>
+                            </TouchableOpacity>
+                        )}
                     </View>
                 </View>
                 <View style={styles.containerInserts}>
+                    <View style={styles.world}>
+                        <Image
+                            style={styles.texture}
+                            source={require('../../../assets/texture.png')}
+                        />
+                        <LinearGradient
+                            style={styles.iconPlanet}
+                            colors={[color1, color2]}
+                            start={[0, 1]}
+                            end={[0, 0]}
+                        />
+                    </View>
 
                     <Text style={styles.titleInserts}>Informações sobre o Mundo</Text>
                     <View style={styles.containerInfoWorld}>
