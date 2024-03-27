@@ -39,7 +39,7 @@ export default function Home() {
             <View style={styles.border}></View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonNav}>
+        <TouchableOpacity onPress={() => navigation.navigate("AboutMe")} style={styles.buttonNav}>
           <Ionicons style={styles.iconRoutes} name="person" size={23} color="#d8d5db" />
           <View style={styles.descRoute}>
             <Text style={styles.buttonTxt}>Criador</Text>

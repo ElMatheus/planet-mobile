@@ -4,6 +4,7 @@ import Home from "../screens/Home";
 import Management from "../screens/PlanetManagement";
 import Planets from "../screens/Planets";
 import Planet from "../screens/Planet";
+import AboutMe from "../screens/AboutMe";
 
 const Tab = createBottomTabNavigator();
 
@@ -49,6 +50,13 @@ const TabRoutes = () => {
       } />
 
       <Tab.Screen name="Planet" component={Planet} options={
+        {
+          tabBarItemStyle: {
+            display: 'none',
+          },
+        }
+      } />
+      <Tab.Screen name="AboutMe" component={AboutMe} options={
         {
           tabBarItemStyle: {
             display: 'none',
