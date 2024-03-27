@@ -39,7 +39,6 @@ export default function Management({ route }) {
 
     useEffect(() => {
         if (edit) {
-            console.log("blz");
             setName(planet.name);
             setDescription(planet.desc);
             setDate(planet.dataConquista);
