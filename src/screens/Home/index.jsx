@@ -1,10 +1,12 @@
 import { View, Text, TouchableOpacity, ImageBackground, Image } from 'react-native';
 import repository from '../../models/planet/PlanetsRepository';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles';
 
 export default function Home() {
+  const navigation = useNavigation()
   return (
     <ImageBackground style={styles.backgroundImage} source={require('../../../assets/backgroundPlanet.jpg')} >
 
@@ -23,14 +25,14 @@ export default function Home() {
         <Text style={styles.titlePlanets} >{repository.getLengthPlanets()} mundos descobertos</Text>
       </View>
       <View style={styles.containerButtons}>
-        <TouchableOpacity style={styles.buttonNav}>
+        <TouchableOpacity onPress={() => navigation.navigate("Management")} style={styles.buttonNav}>
           <Ionicons style={styles.iconRoutes} name="add" size={23} color="#d8d5db" />
           <View style={styles.descRoute}>
             <Text style={styles.buttonTxt}>Gerenciar Mundos</Text>
             <View style={styles.border}></View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonNav}>
+        <TouchableOpacity onPress={() => navigation.navigate("Planets")} style={styles.buttonNav}>
           <Ionicons style={styles.iconRoutes} name="list" size={23} color="#d8d5db" />
           <View style={styles.descRoute}>
             <Text style={styles.buttonTxt}>Catálogo de Mundos</Text>

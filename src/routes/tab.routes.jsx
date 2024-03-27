@@ -22,7 +22,10 @@ const TabRoutes = () => {
       }}>
       <Tab.Screen name="Home" component={Home} options={
         {
-          tabBarLabel: 'Início'
+          tabBarIcon: ({ focused }) => (<Feather name="home" size={24} color={focused ? "#4cc0c0" : "#605565"} />),
+          tabBarLabel: 'Início',
+          tabBarActiveTintColor: '#4cc0c0',
+          tabBarInactiveTintColor: '#605565',
         }
 
       } />
