@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 15,
-    marginTop: 20,
+    marginTop: "10%",
+    gap: 7,
   },
   titleInfoApp: {
     fontSize: 20,
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     color: '#8b8295',
   },
   develop: {
+    marginTop: "50%",
     backgroundColor: '#f6ede4',
     padding: 10,
   },
