@@ -2,12 +2,18 @@ import { View, Text, ImageBackground, Image, TouchableOpacity, Linking } from 'r
 import { profile } from '../../data/Profile';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from './styles';
 
 export default function AboutMe() {
   return (
-    <ImageBackground style={styles.backgroundImage} source={require('../../../assets/backgroundPlanetProfile.jpg')}>
+    <LinearGradient
+      colors={['#1a1733', '#201841']}
+      start={{ x: 0, y: 1 }}
+      end={{ x: 1, y: 0 }}
+      style={styles.backgroundImage}
+    >
       <View style={styles.InfoApp}>
         <Text style={styles.titleInfoApp}>Planet Mobile</Text>
         <Text style={styles.textInfoApp}>Versão 1.0</Text>
@@ -65,6 +71,6 @@ export default function AboutMe() {
           </View>
         </View>
       </View>
-    </ImageBackground>
+    </LinearGradient>
   )
 }
