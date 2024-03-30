@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     justifyContent: 'space-between',
+
   },
   title: {
     fontSize: 40,
@@ -28,7 +29,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     justifyContent: 'center',
-    marginTop: "55%",
     padding: 10,
     marginRight: 20,
     marginLeft: 20,
@@ -37,16 +37,18 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   containerDesc: {
-    marginTop: 20,
+    marginTop: 11,
   },
   desc: {
     color: '#8b8295',
     fontSize: 15,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 16,
   },
   containerButtons: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
     backgroundColor: '#322c49',
     borderTopRightRadius: 60,
     borderTopLeftRadius: 60,
