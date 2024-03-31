@@ -26,8 +26,8 @@ export default function Management({ route }) {
     const [rulerName, setRulerName] = useState('');
     const [rulerTitle, setRulerTitle] = useState('');
     // cores inputs
-    const [color1, setColor1] = useState('');
-    const [color2, setColor2] = useState('');
+    const [color1, setColor1] = useState('#000');
+    const [color2, setColor2] = useState('#000');
 
     const [styleColor1, setStyleColor1] = useState('');
 

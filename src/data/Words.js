@@ -31,7 +31,7 @@ export const planets = [
       coordinates: '78, -34, 12',
     },
     governante: {
-      name:  'Neytiri',
+      name: 'Neytiri',
       title: 'Rainha',
     },
     cores: {
@@ -42,7 +42,7 @@ export const planets = [
   {
     id: 3,
     name: 'Cogulandia',
-    desc: 'Um mundo extraordinário de maravilhas caleidoscópicas, coberto por vastos cogumelos gigantes',
+    desc: 'Vem ser feliz em Cogulandia!',
     dataConquista: '10/12/2550',
     population: '620.480',
     localizacao: {
@@ -51,7 +51,7 @@ export const planets = [
       coordinates: '123, 000, 9901',
     },
     governante: {
-      name:  'Matheus',
+      name: 'Matheus',
       title: 'Matuê',
     },
     cores: {
@@ -71,7 +71,7 @@ export const planets = [
       coordinates: '201, 782, -150',
     },
     governante: {
-      name:  'Pravel',
+      name: 'Pravel',
       title: 'PRV',
     },
     cores: {
@@ -91,12 +91,12 @@ export const planets = [
       coordinates: '910, 010, 629',
     },
     governante: {
-      name:  'Bill',
+      name: 'Bill',
       title: 'Bora Bill',
     },
     cores: {
       color1: '#ffcc00',
       color2: '#ff9900',
     },
-  },  
+  },
 ];
