@@ -24,7 +24,7 @@ Este componente exibe o número total de mundos descobertos, que é obtido do re
 
 Existem três botões na tela Home que permitem aos usuários navegar para outras telas do aplicativo.
 
-![Exemplo da tela Home](./assets/exemploHome.png)
+<img src="./assets/exemploHome.png" width="250">
 
 ## Gerenciamento de Mundos
 
@@ -46,7 +46,7 @@ Abaixo dos botões de ação, há uma visualização do mundo. Esta visualizaç�
 
 Finalmente, há uma seção de informações de entrada onde os usuários podem inserir detalhes sobre o mundo que estão criando ou editando. Esta seção contém vários campos de entrada para coletar informações do usuário.
 
-![Exemplo da tela Gerenciamento de Mundos](./assets/exemploGrenciador.png)
+<img src="./assets/exemploGrenciador.png" width="250">
 
 ## Planeta
 
@@ -64,7 +64,7 @@ Sobreposto à imagem do planeta, há um ícone de planeta. Este ícone é um gra
 
 Existem botões de ação que permitem aos usuários editar ou excluir o planeta atual.
 
-![Exemplo da tela Planeta](./assets/exemploPlaneta.png)
+<img src="./assets/exemploPlaneta.png" width="250">
 
 ## Planetas
 
@@ -74,7 +74,7 @@ Aqui você encontrará os catálogos de planetas descobertos
 
 Com todos os planetas existentes, nesta tela temos a imagem exemplo das cores do planeta, juntamente com o nome, descrição e habitantes deste planeta que ao clicar em cima leva para tela separada de cada planeta específico.
 
-![Exemplo da tela Planetas](./assets/exemploPlanetas.png)
+<img src="./assets/exemploPlanetas.png" width="250">
 
 ## Criador (Sobre Mim)
 
@@ -88,7 +88,7 @@ Esta seção contém informações sobre o aplicativo, incluindo o título *Plan
 
 Esta seção contém informações sobre o desenvolvedor do aplicativo. Inclui uma imagem de perfil, o nome do desenvolvedor, a idade e links para o GitHub e LinkedIn do desenvolvedor.
 
-![Exemplo da tela Criador](./assets/exemploCriador.png)
+<img src="./assets/exemploCriador.png" width="250">
 
 # 📜 Nota
 
