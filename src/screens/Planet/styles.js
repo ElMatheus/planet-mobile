@@ -31,9 +31,6 @@ const styles = StyleSheet.create({
         height: 170,
         borderRadius: 100,
     },
-    containerPlanet: {
-
-    },
     containerInfoPlanet: {
         marginTop: "10%",
         width: '100%',

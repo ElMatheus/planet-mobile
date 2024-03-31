@@ -20,13 +20,14 @@ export default function Planet({ route }) {
     navigation.navigate("Management", { planet: planet, edit: true });
   }
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <LinearGradient
         colors={['#1a1733', '#201841']}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 0 }}
         style={styles.containerBack}
       >
+
 
         <View style={styles.containerInfo}>
           <Text style={styles.title}>{planet.name}</Text>
