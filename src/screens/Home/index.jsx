@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import repository from '../../models/planet/PlanetsRepository';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'

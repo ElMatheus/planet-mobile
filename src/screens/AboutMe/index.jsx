@@ -2,7 +2,6 @@ import { View, Text, ImageBackground, Image, TouchableOpacity, Linking, ScrollVi
 import { profile } from '../../data/Profile';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from './styles';
 
